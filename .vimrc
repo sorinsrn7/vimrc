@@ -27,7 +27,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'L9'
 
 " CUTE-PYTHON
-Plugin 'ehamberg/vim-cute-python'
+"Plugin 'ehamberg/vim-cute-python'
 
 " ADDON-MW-UTILS
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -75,7 +75,7 @@ Plugin 'benmills/vimux'
 Plugin 'Valloric/MatchTagAlways'
 
 " YOUCOMPLETEME
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " UltiSnips
 Plugin 'SirVer/ultisnips'
@@ -234,9 +234,9 @@ filetype plugin on
  let mapleader="\\"
 
 "  let g:solarized_contrast=""
-let g:solarized_termcolors=16
-let g:solarized_termtrans=0
-let g:solarized_visibility="high"
+" let g:solarized_termcolors=16
+" let g:solarized_termtrans=0
+" let g:solarized_visibility="high"
 set background=light
 colorscheme molokai 
 
@@ -263,7 +263,7 @@ set t_Co=256
 set term=screen-256color
 
 let g:Powerline_symbols = 'utf-8'
-" let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 "set guifont=Droid\ Sans\ Mono\ for\ Powerline.otf
 
 if has('gui_running')
@@ -285,6 +285,8 @@ map rx :VimuxCloseRunner
 " " Interrupt any command running in the runner pane
 map rs :VimuxInterruptRunner
 
+" " Run the current script in python
+autocmd FileType python nnoremap <buffer> <F9> :exec '!clear;python' shellescape(@%, 1)<cr>
 " turn on command line completition wild style
 set wildmenu
 
@@ -377,3 +379,4 @@ autocmd FileType python set sts=4
 
 set modelines=1
 " vim:foldmethod=marker:foldlevel=0
+
